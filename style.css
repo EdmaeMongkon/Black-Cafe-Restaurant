@@ -552,7 +552,7 @@ ul {
     height: 75%;
     top: 0;
     left: 0;
-    background-image: url('assets/coffee_ad.png');
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('assets/coffee_macchiato.png');
     z-index: 2;
 }
 
@@ -561,7 +561,7 @@ ul {
     height: 70%;
     bottom: 0;
     right: 0;
-    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=600');
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('assets/pasta_truffle.png');
     z-index: 1;
 }
 
