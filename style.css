@@ -234,6 +234,7 @@ ul {
     box-shadow: 0 4px 15px var(--gold-glow);
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     transition: var(--transition-smooth);
 }
@@ -255,6 +256,7 @@ ul {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     transition: var(--transition-smooth);
 }
