@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-trn-key="meta-title">Black Cafe & Restaurant | คาเฟ่และร้านอาหารพรีเมียม บางบอน</title>
+    <meta name="description" content="Black Cafe & Restaurant ยินดีต้อนรับสู่มุมพักผ่อนที่ผสมผสานความสุขง่ายๆ จากกาแฟพรีเมียมและอาหารรสเลิศ ย่านบางบอน กาญจนาภิเษก 3 สำรองที่นั่งและบริการจัดเลี้ยงนอกสถานที่">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Noto+Sans+Thai:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Image Container -->
+    <div class="bg-image-container"></div>
+
+    <!-- Canvas for Floating Coffee Beans Animation -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="main-nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" id="nav-logo-link">
+                <span class="logo-txt-gold">BLACK</span> <span class="logo-txt-white">CAFE</span>
+            </a>
+            
+            <button class="menu-toggle" id="mobile-menu-toggle" aria-label="เปิดเมนู">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="nav-menu">
+                <a href="#hero" class="nav-link active" id="link-home" data-trn-key="nav-home">หน้าแรก</a>
+                <a href="#about" class="nav-link" id="link-about" data-trn-key="nav-about">เกี่ยวกับเรา</a>
+                <a href="#menu" class="nav-link" id="link-menu" data-trn-key="nav-menu">เมนูแนะนำ</a>
+                <a href="#services" class="nav-link" id="link-services" data-trn-key="nav-services">บริการจัดเลี้ยง</a>
+                <a href="#contact" class="nav-link" id="link-contact" data-trn-key="nav-contact">ติดต่อเรา</a>
+                
+                <!-- Language Switcher inside Nav -->
+                <div class="lang-switch-container">
+                    <button class="lang-btn active" data-lang="th" id="btn-lang-th">TH</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="en" id="btn-lang-en">EN</button>
+                </div>
+
+                <a href="#booking-section" class="btn-gold nav-btn" id="btn-nav-book" data-trn-key="btn-nav-book">จองโต๊ะ / จัดบูธ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="glass-card hero-card">
+                <div class="badge-gold" data-trn-key="hero-badge">EST. 2023</div>
+                <h1 class="hero-title" data-trn-key="hero-title">BLACK CAFE & RESTAURANT</h1>
+                <p class="hero-subtitle" data-trn-key="hero-subtitle">“ความสุขง่ายๆ อาจเริ่มจากข้าวหนึ่งจาน และบรรยากาศที่ทำให้คุณรู้สึกสบายใจ”</p>
+                <div class="hero-actions">
+                    <a href="#menu" class="btn-outline-gold" id="btn-hero-menu" data-trn-key="btn-hero-menu"><i class="fa-solid fa-utensils"></i> ดูเมนูของเรา</a>
+                    <a href="#booking-section" class="btn-gold" id="btn-hero-book" data-trn-key="btn-hero-book"><i class="fa-solid fa-calendar-check"></i> สำรองบริการ / จัดเลี้ยง</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#about" id="scroll-down-link"><i class="fa-solid fa-chevron-down bounce"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-trn-key="about-tag">OUR STORY</span>
+                <h2 class="section-title" data-trn-key="about-title">เกี่ยวกับ BLACK CAFE</h2>
+                <div class="gold-divider"></div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="about-text-card glass-card">
+                    <h3 data-trn-key="about-h3">มุมเล็กๆ แห่งความสบายใจย่านบางบอน</h3>
+                    <p data-trn-key="about-p1">ที่ <strong>Black Cafe & Restaurant</strong> เราเชื่อว่าอาหารที่ดีและกาแฟที่มีคุณภาพ สามารถเปลี่ยนวันธรรมดาให้เป็นวันพิเศษได้ เราตั้งใจคัดสรรวัตถุดิบชั้นเลิศเพื่อส่งมอบความอร่อยและความสุขผ่านทุกจานอาหารและเครื่องดื่มทุกแก้ว</p>
+                    <p data-trn-key="about-p2">ไม่ว่าคุณจะเป็นคนรักกาแฟที่มองหาเครื่องดื่มแก้วโปรดเพื่อเริ่มเช้าวันใหม่ หรือกำลังมองหารสชาติอาหารอันอบอุ่นที่ทำให้รู้สึกผ่อนคลายในบรรยากาศพรีเมียมหรูหราสไตล์ Modern Glassmorphic ที่นี่พร้อมต้อนรับคุณเสมอ</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-mug-hot"></i></div>
+                            <div>
+                                <h4 data-trn-key="about-feat-title1">Premium Coffee</h4>
+                                <p data-trn-key="about-feat-desc1">เมล็ดกาแฟสายพันธุ์ดี คั่วบดอย่างพิถีพิถันเพื่อรสสัมผัสระดับสูงสุด</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+                            <div>
+                                <h4 data-trn-key="about-feat-title2">Crafted Meals</h4>
+                                <p data-trn-key="about-feat-desc2">ปรุงสดใหม่ทุกจาน ผสานรสชาติดั้งเดิมและวัตถุดิบคุณภาพเยี่ยม</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-media-card">
+                    <div class="image-gallery-holder">
+                        <div class="image-box box-1">
+                            <div class="image-overlay"></div>
+                            <span class="img-label" data-trn-key="about-lbl1">Craft Coffee</span>
+                        </div>
+                        <div class="image-box box-2">
+                            <div class="image-overlay"></div>
+                            <span class="img-label" data-trn-key="about-lbl2">Signature Dishes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section bg-dark-overlay">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-trn-key="menu-tag">EXQUISITE SELECTIONS</span>
+                <h2 class="section-title" data-trn-key="menu-title">เมนูแนะนำของร้าน</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <!-- Menu Tabs Wrapper with Scroll Arrows -->
+            <div class="menu-tabs-wrapper">
+                <button class="tab-arrow-btn arrow-left" id="btn-tab-prev" aria-label="Previous categories">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                
+                <div class="menu-tabs" id="menu-tabs-scroll">
+                    <button class="tab-btn active" data-tab="coffee" id="tab-coffee" data-trn-key="tab-coffee">
+                        <i class="fa-solid fa-mug-saucer"></i> COFFEE & TEA
+                    </button>
+                    <button class="tab-btn" data-tab="smoothie" id="tab-smoothie" data-trn-key="tab-smoothie">
+                        <i class="fa-solid fa-blender"></i> SMOOTHIE & MILK
+                    </button>
+                    <button class="tab-btn" data-tab="appetizer" id="tab-appetizer" data-trn-key="tab-appetizer">
+                        <i class="fa-solid fa-bowl-rice"></i> APPETIZER & SALAD
+                    </button>
+                    <button class="tab-btn" data-tab="pizza" id="tab-pizza" data-trn-key="tab-pizza">
+                        <i class="fa-solid fa-pizza-slice"></i> PASTA & PIZZA
+                    </button>
+                    <button class="tab-btn" data-tab="maincourse" id="tab-maincourse" data-trn-key="tab-maincourse">
+                        <i class="fa-solid fa-utensils"></i> MAIN COURSE
+                    </button>
+                </div>
+                
+                <button class="tab-arrow-btn arrow-right" id="btn-tab-next" aria-label="Next categories">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-container">
+                <!-- Coffee & Tea Tab -->
+                <div class="tab-content active" id="tab-content-coffee">
+                    <div class="grid-3">
+                        <!-- Item 1 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/coffee_macchiato.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-c-n1">แมคคิอาโต้ (Macchiato)</h3>
+                                    <span class="menu-price">89.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-c-d1">เอสเพรสโซ่เข้มข้น ผสานฟองนมนุ่มและซอสคาราเมลหอมหวานสูตรแนะนำ</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/coffee_latte.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-c-n2">คาเฟ่ลาเต้ (Latte)</h3>
+                                    <span class="menu-price">69.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-c-d2">กาแฟเอสเพรสโซ่หนึ่งช็อตรสชาตินุ่มละมุน ผสมกับนมสดสตรีมร้อน/เย็นเข้ากันลงตัว</p>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/coffee_coconut_americano.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-c-n3">อเมริกาโน่น้ำมะพร้าว</h3>
+                                    <span class="menu-price">79.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-c-d3">กาแฟเอสเพรสโซ่เข้มข้น ผสานความหวานสดชื่นจากน้ำมะพร้าวสดแท้จากธรรมชาติ</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/coffee_espresso.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-c-n4">เอสเปรสโซ่ (Espresso)</h3>
+                                    <span class="menu-price">69.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-c-d4">กาแฟเอสเปรสโซ่เข้มข้นรสชาติดั้งเดิม หอมกรุ่นกลิ่นอโรมาเต็มพิกัด</p>
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/coffee_thaitea.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-c-n5">ชาไทยนมสด</h3>
+                                    <span class="menu-price">69.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-c-d5">ใบชาไทยโบราณคัดพิเศษ ชงสดใหม่ผสมนมสดรสชาติหอมมันกลมกล่อม</p>
+                            </div>
+                        </div>
+                        <!-- Item 6 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/coffee_orange_americano.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-c-n6">อเมริกาโน่ส้ม (Orange Americano)</h3>
+                                    <span class="menu-price">79.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-c-d6">ช็อตกาแฟดำเข้มข้น ราดบนน้ำส้มคั้นรสหวานอมเปรี้ยว สดชื่นกระปรี้กระเปร่า</p>
+                            </div>
+                        </div>
+                        <!-- Item 7 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/coffee_matcha_latte.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-c-n7">มัทฉะลาเต้ (Matcha Latte)</h3>
+                                    <span class="menu-price">79.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-c-d7">ชาเขียวมัทฉะแท้นำเข้า ชงนมสดรสชาติกลมกล่อมหอมละมุนสไตล์ญี่ปุ่น</p>
+                            </div>
+                        </div>
+                        <!-- Item 8 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/coffee_coconut_matcha.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-c-n8">มัทฉะน้ำมะพร้าว</h3>
+                                    <span class="menu-price">89.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-c-d8">ผงชาเขียวมัทฉะพรีเมียม สกัดเข้มข้นเทซ้อนบนน้ำมะพร้าวอ่อนน้ำหอมหวานสดชื่น</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional items list -->
+                    <div class="extra-menu-wrapper glass-card">
+                        <h4 class="extra-title" data-trn-key="extra-title-c">เมนูชาและกาแฟเพิ่มเติม (Other Drinks)</h4>
+                        <div class="extra-menu-grid">
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c1">อเมริกาโน่ (คั่วเข้ม / คั่วกลาง)</span>
+                                <span class="extra-price">69.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c2">กาแฟนมมะพร้าว</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c3">คาปูชิโน่</span>
+                                <span class="extra-price">69.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c4">มอคค่า</span>
+                                <span class="extra-price">79.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c5">มัทฉะนมมะพร้าว</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c6">นมสดพรีเมียม</span>
+                                <span class="extra-price">59.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c7">นมมะพร้าวสด</span>
+                                <span class="extra-price">69.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c8">โกโก้เย็นเข้มข้น</span>
+                                <span class="extra-price">69.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c9">ชาดำเย็น</span>
+                                <span class="extra-price">59.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c10">มัทฉะส้ม</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-c11">ชาเขียวมัทฉะออริจินัล</span>
+                                <span class="extra-price">69.-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smoothie & Milk Tab -->
+                <div class="tab-content" id="tab-content-smoothie">
+                    <div class="grid-3">
+                        <!-- Item 1 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/smoothie_strawberry_biscuit.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-s-n1">สตรอเบอร์รี่บิสกิตปั่น</h3>
+                                    <span class="menu-price">89.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-s-d1">สตรอเบอร์รี่นมสดปั่นละเอียด ท็อปปิ้งซอสแดงเข้มข้นและคุ้กกี้บิสกิตกรุบกรอบรสหวาน</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/smoothie_mixed_berry.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-s-n2">มิกซ์เบอร์รี่ปั่น</h3>
+                                    <span class="menu-price">89.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-s-d2">รวมเบอร์รี่หลากชนิดปั่นจนเนื้อเนียน รสเปรี้ยวอมหวานชื่นใจ พร้อมคุณประโยชน์เต็มพิกัด</p>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/smoothie_cocoa.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-s-n3">โกโก้ปั่นเข้มข้น</h3>
+                                    <span class="menu-price">89.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-s-d3">ผงโกโก้แท้สกัดเข้มข้นปั่นจนเป็นเนื้อเกล็ดหิมะ ราดด้วยท็อปปิ้งซอสช็อกโกแลตเยิ้มๆ</p>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/smoothie_oreo.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-s-n4">โอริโอมิลค์กี้ปั่น</h3>
+                                    <span class="menu-price">89.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-s-d4">นมสดปั่นผสมคุ้กกี้โอริโอ้ หวานมันกลมกล่อม เคี้ยวสนุกด้วยเศษคุ้กกี้กรอบและวิปครีม</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional items list -->
+                    <div class="extra-menu-wrapper glass-card">
+                        <h4 class="extra-title" data-trn-key="extra-title-s">เมนูปั่นเพิ่มเติม (Other Smoothies)</h4>
+                        <div class="extra-menu-grid">
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-s1">สตรอว์เบอร์รี่นมสดปั่น</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-s2">มะพร้าวนมสดปั่น</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-s3">ชาไทยปั่นนมสด</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-s4">น้ำส้มปั่นสดชื่น</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-s5">มัทฉะลาเต้ปั่น</span>
+                                <span class="extra-price">99.-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Appetizer & Salad Tab -->
+                <div class="tab-content" id="tab-content-appetizer">
+                    <div class="grid-3">
+                        <!-- Item 1 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/appetizer_wings.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n1">ปีกไก่ทอดซอสซีเคร็ต</h3>
+                                    <span class="menu-price">179.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d1">ปีกไก่บนทอดจนเหลืองทองกรอบนอกนุ่มใน คลุกเคล้าด้วยซอสเคลือบหวานเค็มสูตรลับเฉพาะ</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/appetizer_grilled_beef.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n2">เนื้อย่างจิ้มแจ่ว</h3>
+                                    <span class="menu-price">199.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d2">เนื้อวัวคัดพิเศษหมักเครื่องเทศอย่างดี ย่างเตาถ่านหอมกรุ่น เสิร์ฟคู่ซอสแจ่วมะขามรสแซ่บ</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/appetizer_chicken_cashew.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n3">ไก่ผัดเม็ดมะม่วงหิมพานต์</h3>
+                                    <span class="menu-price">149.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d3">เนื้อไก่หั่นพอดีคำผัดซอสรสเข้มข้น ใส่พริกหวาน ต้นหอม และเม็ดมะม่วงหิมพานต์คั่วกรอบ</p>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/appetizer_party_set.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n4">เซตปาร์ตี้ (Party Set)</h3>
+                                    <span class="menu-price">129.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d4">ชุดของทอดรวมมิตร (เฟรนช์ฟรายส์ นักเก็ต ไก่ป๊อป) เสิร์ฟคู่กับซอสจิ้มสูตรพิเศษอร่อยจุใจ</p>
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/appetizer_dirty_fries.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n5">เดอร์ตี้ฟราย (Dirty Fries)</h3>
+                                    <span class="menu-price">139.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d5">เฟรนช์ฟรายส์ทอดร้อนๆ ราดซอสชีสเยิ้ม โรยเบคอนกรอบสับและผงปรุงรสเข้มข้นสะใจ</p>
+                            </div>
+                        </div>
+                        <!-- Item 6 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/appetizer_calamari.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n6">คารามารี่ปลาหมึกทอด</h3>
+                                    <span class="menu-price">119.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d6">ปลาหมึกชุบแป้งทอดสไตล์อิตาเลียน กรอบนอกหนึบในเสิร์ฟร้อนๆ คู่ทาร์ทาร์ซอส</p>
+                            </div>
+                        </div>
+                        <!-- Item 7 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/salad_caesar.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n7">ซีซ่าสลัด (Caesar Salad)</h3>
+                                    <span class="menu-price">139.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d7">ผักกาดคอสสดกรอบ คลุกเคล้าน้ำสลัดซีซาร์ โรยชีสพาเมซาน ขนมปังกรอบ และเบคอนอบ</p>
+                            </div>
+                        </div>
+                        <!-- Item 8 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/salad_ham.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n8">แฮมสลัด</h3>
+                                    <span class="menu-price">149.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d8">สลัดผักไฮโดรโปนิกส์สด ท็อปแฮมสไลด์รมควันเนื้อนุ่มชิ้นใหญ่ ทานคู่น้ำสลัดครีมข้น</p>
+                            </div>
+                        </div>
+                        <!-- Item 9 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/salad_tuna.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n9">ทูน่าสลัด</h3>
+                                    <span class="menu-price">149.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d9">เนื้อปลาทูน่าในน้ำแร่อย่างดี ท็อปผักสลัดออร์แกนิกและมะเขือเทศหวานฉ่ำ</p>
+                            </div>
+                        </div>
+                        <!-- Item 10 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/salad_salmon.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-a-n10">สลัดแซลมอนรมควัน</h3>
+                                    <span class="menu-price">239.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-a-d10">ผักสลัดไฮโดรโปนิกส์สดกรอบ เสิร์ฟพร้อมแผ่นแซลมอนรมควันเนื้อฉ่ำและน้ำสลัดเข้มข้น</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional items list -->
+                    <div class="extra-menu-wrapper glass-card">
+                        <h4 class="extra-title" data-trn-key="extra-title-a">เมนูยำรสแซ่บ (Spicy Salads)</h4>
+                        <div class="extra-menu-grid">
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-a1">ยำหมูยอรสแซ่บ</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-a2">ยำไส้กรอก</span>
+                                <span class="extra-price">109.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-a3">ยำไข่ดาวทรงเครื่อง</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pasta & Pizza Tab -->
+                <div class="tab-content" id="tab-content-pizza">
+                    <div class="grid-3">
+                        <!-- Item 1 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/pasta_ham_mushroom.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-p-n1">พาสต้าครีมแฮมเห็ด</h3>
+                                    <span class="menu-price">189.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-p-d1">เส้นพาสต้าสปาเก็ตตี้เหนียวนุ่มผัดครีมซอสข้นรสหวานมันเค็ม ใส่แฮมและเห็ดแชมปิญอง</p>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/pasta_truffle.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-p-n2">พาสต้าครีมทรัฟเฟิล</h3>
+                                    <span class="menu-price">289.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-p-d2">ครีมซอสเห็ดรสละมุน ผสานกับน้ำมันเห็ดทรัฟเฟิลเกรดพรีเมียม กลิ่นหอมฟุ้งหรูหรา</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/pasta_spicy_spaghetti.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-p-n3">สปาเก็ตตี้ขี้เมาแฮม</h3>
+                                    <span class="menu-price">169.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-p-d3">สปาเก็ตตี้ผัดสมุนไพรสดและพริกแห้ง รสจัดจ้านแบบไทย ผสมแฮมชิ้นใหญ่เนื้อแน่น</p>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/pizza_four_cheese.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-p-n4">พิซซ่าโฟร์ชีส (Four Cheese)</h3>
+                                    <span class="menu-price">M: 259.- / L: 399.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-p-d4">จัดเต็มชีสเกรดพรีเมียม 4 ชนิด (มอสซาเรลล่า, พาร์มิจิอาโน, บลูชีส, เชดดาร์ชีส)</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/pizza_salmon.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-p-n5">พิซซ่าแซลมอนรมควัน</h3>
+                                    <span class="menu-price">M: 329.- / L: 499.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-p-d5">แซลมอนรมควันสไลด์บาง ท็อปบนแป้งพิซซ่าชีสและซอสมะเขือเทศเข้มข้น</p>
+                            </div>
+                        </div>
+                        <!-- Item 6 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/pizza_pepperoni.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-p-n6">พิซซ่าเปปเปอโรนี</h3>
+                                    <span class="menu-price">M: 249.- / L: 399.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-p-d6">ซาลามีรสเผ็ดอิตาเลียน (เปปเปอโรนี) วางเรียงบนชีสเยิ้ม ยอดนิยมตลอดกาล</p>
+                            </div>
+                        </div>
+                        <!-- Item 7 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/pizza_margherita.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-p-n7">พิซซ่ามาร์เกอริต้า</h3>
+                                    <span class="menu-price">M: 199.- / L: 299.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-p-d7">แป้งพิซซ่าบางกรอบท็อปปิ้งด้วยซอสมะเขือเทศเข้มข้น มอสซาเรลล่าชีส และโหระพาอิตาเลียน</p>
+                            </div>
+                        </div>
+                        <!-- Item 8 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/pizza_hawaiian.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-p-n8">พิซซ่าฮาวายเอี้ยน</h3>
+                                    <span class="menu-price">M: 229.- / L: 399.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-p-d8">พิซซ่าหน้าแฮมและสับปะรด หวานฉ่ำชีสเยิ้ม อบหอมจากเตาถูกใจเด็กและผู้ใหญ่</p>
+                            </div>
+                        </div>
+                        <!-- Item 9 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/pizza_truffle_mushroom.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-p-n9">พิซซ่าเห็ดทรัฟเฟิล</h3>
+                                    <span class="menu-price">M: 289.- / L: 429.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-p-d9">ครีมซอสทรัฟเฟิลเห็ดหอมกระจายบนแป้งพิซซ่าโฮมเมด อบเตาร้อนส่งกลิ่นหอมชวนทาน</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional items list -->
+                    <div class="extra-menu-wrapper glass-card">
+                        <h4 class="extra-title" data-trn-key="extra-title-p">พาสต้าและพิซซ่าอื่นๆ (Other Pasta & Pizza)</h4>
+                        <div class="extra-menu-grid">
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-p1">สปาเก็ตตี้ซอสเนื้อสับ Bolognese</span>
+                                <span class="extra-price">199.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-p2">สปาเก็ตตี้ซอสมะเขือเทศหมู</span>
+                                <span class="extra-price">189.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-p3">พาสต้าโรเซ่</span>
+                                <span class="extra-price">189.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-p4">พิซซ่ามารินาร่า (ไม่มีชีส)</span>
+                                <span class="extra-price">M: 199.- / L: 299.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-p5">พิซซ่าซีฟู้ด (กุ้ง,หมึก,หอย)</span>
+                                <span class="extra-price">M: 259.- / L: 429.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-p6">พิซซ่าพาร์ม่าแฮม</span>
+                                <span class="extra-price">M: 279.- / L: 499.-</span>
+                            </div>
+                        </div>
+                        <div class="extra-toppings-section">
+                            <span data-trn-key="extra-toppings-title">ท็อปปิ้งเพิ่มเติม (Extra Toppings):</span>
+                            <span data-trn-key="extra-toppings-values">เบคอน +39.- | แฮม +39.- | ชีส +39.-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Course Tab -->
+                <div class="tab-content" id="tab-content-maincourse">
+                    <div class="grid-3">
+                        <!-- Item 1 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/main_traditional_fried_rice.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-m-n1">ข้าวผัดโบราณ</h3>
+                                    <span class="menu-price">79.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-m-d1">ข้าวหอมมะลิผัดซีอิ๊วใส่ไข่ หมู และคะน้าสด ผัดไฟแรงหอมกลิ่นกระทะตามสูตรดั้งเดิม</p>
+                            </div>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/main_omelet_pork.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-m-n2">ข้าวไข่เจียวหมูสับ</h3>
+                                    <span class="menu-price">69.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-m-d2">เมนูคุ้นเคยรสชาติอร่อยกลมกล่อม ไข่เจียวสับหมูสับแบบไทยฟูหนานุ่ม เสิร์ฟคู่ข้าวสวยร้อนๆ</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/main_egg_fried_rice.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-m-n3">ข้าวผัดไข่</h3>
+                                    <span class="menu-price">59.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-m-d3">ข้าวหอมมะลิผัดกับไข่สดและต้นหอมปรุงรสกลมกล่อม ผัดไฟแรงหอมกลิ่นกระทะคลาสสิกสะใจ</p>
+                            </div>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/main_pork_suanson.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-m-n4">ข้าวหมูสวนสน</h3>
+                                    <span class="menu-price">79.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-m-d4">เนื้อหมูหมักสูตรเด็ดเฉพาะผัดคลุกเคล้าจนเนื้อนุ่มชุ่มฉ่ำ ราดบนข้าวสวยร้อนๆ เคียงผัก</p>
+                            </div>
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/main_egg_gravy_pork.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-m-n5">ข้าวไข่ข้นซอสหมู</h3>
+                                    <span class="menu-price">89.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-m-d5">ไข่ข้นกึ่งสุกกึ่งดิบเนื้อนุ่มละมุน ราดด้วยซอสหมูสับปรุงรสสูตรกลมกล่อมหอมกรุ่น</p>
+                            </div>
+                        </div>
+                        <!-- Item 6 -->
+                        <div class="menu-card glass-card">
+                            <div class="menu-img-placeholder" style="background-image: url('assets/main_beef_basil_combo.png');"></div>
+                            <div class="menu-details">
+                                <div class="menu-header">
+                                    <h3 class="menu-name" data-trn-key="menu-m-n6">กะเพราเนื้อโคขุน + ไข่เจียวหมูสับ</h3>
+                                    <span class="menu-price">109.-</span>
+                                </div>
+                                <p class="menu-desc" data-trn-key="menu-m-d6">เนื้อโคขุนสับผัดกะเพรารสเผ็ดร้อนแซ่บ เสิร์ฟพร้อมข้าวสวยร้อนๆ และไข่เจียวหมูสับฟูหนานุ่ม</p>
+                                <span class="menu-badge" data-trn-key="menu-badge-rec">Recommend</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional items list -->
+                    <div class="extra-menu-wrapper glass-card">
+                        <h4 class="extra-title" data-trn-key="extra-title-m">อาหารจานหลักอื่นๆ (Other Mains & Combos)</h4>
+                        <div class="extra-menu-grid">
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m1">ข้าวไข่เจียวธรรมดา</span>
+                                <span class="extra-price">49.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m2">ข้าวไข่ข้นธรรมดา</span>
+                                <span class="extra-price">59.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m3">ข้าวกะเพราเนื้อโคขุนสับ</span>
+                                <span class="extra-price">89.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m4">ข้าวกะเพราหมูสับ</span>
+                                <span class="extra-price">79.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m5">ข้าวกะเพราไก่สับ</span>
+                                <span class="extra-price">69.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m6">เซ็ต A1: ข้าวผัดไข่ + โกโก้</span>
+                                <span class="extra-price">109.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m7">เซ็ต A2: ข้าวไข่เจียวหมูสับ + ชาไทย</span>
+                                <span class="extra-price">109.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m8">เซ็ต B1: ข้าวกะเพราหมู + อเมริกาโน่</span>
+                                <span class="extra-price">109.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m9">เซ็ต B2: ข้าวกะเพราไก่ + อเมริกาโน่</span>
+                                <span class="extra-price">119.-</span>
+                            </div>
+                            <div class="extra-item">
+                                <span class="extra-name" data-trn-key="extra-m10">เซ็ต C1: ข้าวกะเพราหมู + ไข่เจียว + เพียวมัทฉะ</span>
+                                <span class="extra-price">179.-</span>
+                            </div>
+                        </div>
+                        <div class="extra-toppings-section">
+                            <span data-trn-key="extra-toppings-title-m">เครื่องเคียงเพิ่มเติม (Add-ons):</span>
+                            <span data-trn-key="extra-toppings-values-m">ไข่ดาว / ไข่เจียว / ไข่ต้ม +10.-</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Out-of-site Catering & Booth Booking Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-trn-key="services-tag">SERVICES</span>
+                <h2 class="section-title" data-trn-key="services-title">บริการจัดเลี้ยงและออกบูธ</h2>
+                <div class="gold-divider"></div>
+            </div>
+            
+            <div class="grid-3 services-list">
+                <!-- Service 1 -->
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fa-solid fa-mug-saucer"></i></div>
+                    <h3 data-trn-key="services-h1">Mobile Coffee Booth</h3>
+                    <p data-trn-key="services-p1">ยกเคาน์เตอร์บาร์กาแฟสดระดับพรีเมียมพร้อมบาริสต้าไปเสิร์ฟถึงในงานแต่งงาน งานเลี้ยงบริษัท หรืออีเว้นท์ของคุณ ด้วยเมล็ดกาแฟและเมนูซิกเนเจอร์อันหลากหลาย</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fa-solid fa-utensils"></i></div>
+                    <h3 data-trn-key="services-h2">Catering Service</h3>
+                    <p data-trn-key="services-p2">บริการอาหารจัดเลี้ยงแบบบุฟเฟ่ต์หรือเซ็ตเมนูฟิวชั่น เหมาะสำหรับงานปาร์ตี้ งานเลี้ยงส่วนตัว หรือการเปิดตัวสินค้า ปรุงสดใหม่ด้วยมาตรฐานระดับสูง</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card glass-card">
+                    <div class="service-icon"><i class="fa-solid fa-box-archive"></i></div>
+                    <h3 data-trn-key="services-h3">Premium Food Box</h3>
+                    <p data-trn-key="services-p3">รับจัดทำข้าวกล่อง / อาหารกล่องพรีเมียม สไตล์เบนโตะหรืออาหารจานเดียวคุณภาพสูง เพื่อรองรับการจัดประชุม สัมมนา หรืองานเลี้ยงขนาดใหญ่</p>
+                </div>
+            </div>
+
+            <!-- Booking Section -->
+            <div id="booking-section" class="booking-wrapper">
+                <div class="glass-card booking-container">
+                    <div class="booking-info">
+                        <h2 data-trn-key="book-h2">สำรองที่นั่ง หรือ ติดต่อจองจัดเลี้ยง / ออกบูธ</h2>
+                        <p data-trn-key="book-p">ต้องการจัดงานเลี้ยงพิเศษหรือบริการกาแฟสดในงานอีเว้นท์ของคุณ? กรอกรายละเอียดเบื้องต้นเพื่อให้ทีมงานของเราติดต่อกลับเพื่อวางแผนและประเมินราคาโดยเร็วที่สุด</p>
+                        <div class="contact-quick">
+                            <div class="quick-item"><i class="fa-solid fa-phone"></i> <span>065-590-5066</span></div>
+                            <div class="quick-item"><i class="fa-solid fa-envelope"></i> <span>info@blackcafe.com</span></div>
+                            <div class="quick-item"><i class="fa-solid fa-location-dot"></i> <span data-trn-key="book-loc">ซอยกาญจนาภิเษก 3 บางบอน</span></div>
+                        </div>
+                    </div>
+                    
+                    <form class="booking-form" id="main-booking-form">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="form-name" data-trn-key="form-lbl-name">ชื่อผู้ติดต่อ / หน่วยงาน <span class="required">*</span></label>
+                                <input type="text" id="form-name" required placeholder="คุณรักดี มีสุข">
+                            </div>
+                            <div class="form-group">
+                                <label for="form-phone" data-trn-key="form-lbl-phone">เบอร์โทรศัพท์ติดต่อ <span class="required">*</span></label>
+                                <input type="tel" id="form-phone" required placeholder="08X-XXX-XXXX">
+                            </div>
+                        </div>
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="form-email" data-trn-key="form-lbl-email">อีเมล</label>
+                                <input type="email" id="form-email" placeholder="example@domain.com">
+                            </div>
+                            <div class="form-type-group form-group">
+                                <label for="form-type" data-trn-key="form-lbl-type">ประเภทบริการที่สนใจ <span class="required">*</span></label>
+                                <select id="form-type" required>
+                                    <option value="" disabled selected data-trn-key="form-opt-placeholder">เลือกบริการ...</option>
+                                    <option value="table" data-trn-key="form-opt-table">สำรองที่นั่งในร้าน (Book a Table)</option>
+                                    <option value="coffee-booth" data-trn-key="form-opt-booth">จองบูธกาแฟสดนอกสถานที่ (Coffee Booth)</option>
+                                    <option value="catering" data-trn-key="form-opt-cater">บริการอาหารจัดเลี้ยง (Catering)</option>
+                                    <option value="foodbox" data-trn-key="form-opt-box">สั่งข้าวกล่องพรีเมียม (Food Box)</option>
+                                    <option value="mix" data-trn-key="form-opt-mix">จัดบูธกาแฟพร้อมจัดเลี้ยง (Coffee & Catering)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="form-date" data-trn-key="form-lbl-date">วันที่จัดงาน / วันที่จอง <span class="required">*</span></label>
+                                <input type="date" id="form-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-guests" data-trn-key="form-lbl-guests">จำนวนผู้ร่วมงาน / จำนวนโต๊ะ <span class="required">*</span></label>
+                                <input type="number" id="form-guests" required min="1" placeholder="จำนวนคน/จำนวนชุด">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-notes" data-trn-key="form-lbl-notes">ข้อมูลเพิ่มเติม / รายละเอียดความต้องการพิเศษ</label>
+                            <textarea id="form-notes" rows="4" placeholder="เช่น รายละเอียดสถานที่จัดงาน, เมนูที่สนใจเป็นพิเศษ, หรือธีมงาน..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-gold form-submit" id="btn-submit-booking" data-trn-key="btn-submit-booking">
+                            <i class="fa-solid fa-paper-plane"></i> ส่งข้อมูลจองบริการ
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Map Section -->
+    <section id="contact" class="section bg-dark-overlay">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" data-trn-key="contact-tag">FIND US</span>
+                <h2 class="section-title" data-trn-key="contact-title">ตำแหน่งร้านและการติดต่อ</h2>
+                <div class="gold-divider"></div>
+            </div>
+
+            <div class="grid-2">
+                <!-- Map Card -->
+                <div class="map-card glass-card">
+                    <div class="map-frame-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.018288540954!2d100.3986273!3d13.6702302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2bd43a2b30cab%3A0xe1440b0282bcf687!2sBlack%20Cafe%20%26%20Restaurant!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            id="google-maps-embed">
+                        </iframe>
+                    </div>
+                    <div class="map-footer-info">
+                        <a href="https://www.google.com/maps/place/Black+Cafe+%26+Restaurant/@13.6702302,100.4036273,911m/data=!3m2!1e3!4b1!4m6!3m5!1s0x30e2bd43a2b30cab:0xe1440b0282bcf687!8m2!3d13.6702302!4d100.4036273!16s%2Fg%2F11l_4_32pz?entry=ttu" 
+                           target="_blank" 
+                           class="btn-outline-gold map-link-btn" 
+                           id="btn-open-maps"
+                           data-trn-key="btn-open-maps">
+                            <i class="fa-solid fa-map-location-dot"></i> เปิดใน Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Info Card -->
+                <div class="info-card glass-card">
+                    <h3 data-trn-key="info-h3">ช่องทางการติดต่อ</h3>
+                    <p data-trn-key="info-p">แวะมาลิ้มรสความสุขกับเมนูที่ปรุงด้วยหัวใจในบรรยากาศผ่อนคลาย หรือติดต่อสอบถามรายละเอียดต่างๆ ได้ทุกวัน</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="contact-text">
+                                <strong data-trn-key="info-lbl-loc">ที่ตั้งร้าน:</strong>
+                                <p data-trn-key="info-val-loc">เลขที่ 9 ซอยกาญจนาภิเษก 3 แขวงบางบอน เขตบางบอน กรุงเทพมหานคร 10150 (ในโครงการเดียวกับ Black Fitness)</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div class="contact-text">
+                                <strong data-trn-key="info-lbl-phone">เบอร์โทรศัพท์:</strong>
+                                <p><a href="tel:065-590-5066" id="tel-link">065-590-5066</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+                            <div class="contact-text">
+                                <strong data-trn-key="info-lbl-hours">เวลาทำการ:</strong>
+                                <p data-trn-key="info-val-hours">เปิดให้บริการทุกวัน เวลา 08:00 น. - 20:00 น.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-channels">
+                        <h4 data-trn-key="social-h4">ติดตามข่าวสาร & โปรโมชั่น</h4>
+                        <div class="social-row">
+                            <a href="https://www.facebook.com/p/Black-Cafe-Restaurant-61572637030889/" target="_blank" class="social-icon-btn facebook" aria-label="Facebook" id="social-fb">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-btn line" aria-label="LINE" id="social-line">
+                                <i class="fa-brands fa-line"></i>
+                            </a>
+                            <a href="#" class="social-icon-btn instagram" aria-label="Instagram" id="social-ig">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Black Cafe & Restaurant. All Rights Reserved.</p>
+                <p class="designer-credit">Designed with <i class="fa-solid fa-heart" style="color: var(--gold-primary);"></i> byy Black Cafe % Restaurant</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Form Submission Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h2 data-trn-key="modal-h2">ส่งข้อมูลการจองสำเร็จ!</h2>
+            <p data-trn-key="modal-p">ทางร้าน Black Cafe & Restaurant ได้รับข้อมูลของคุณแล้ว เจ้าหน้าที่จะดำเนินการตรวจสอบและติดต่อกลับทางเบอร์โทรศัพท์หรืออีเมลที่แจ้งไว้โดยเร็วที่สุด</p>
+            <button class="btn-gold" id="btn-close-modal" data-trn-key="btn-close-modal">ตกลง</button>
+        </div>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+</html>
