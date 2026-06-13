@@ -312,6 +312,11 @@ ul {
     line-height: 1;
 }
 
+.nav-logo span {
+    display: inline-block;
+    transform: translateY(2px);
+}
+
 .nav-logo .logo-img {
     height: 40px;
     width: 40px;
