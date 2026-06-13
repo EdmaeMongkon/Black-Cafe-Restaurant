@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initTabScrollArrows();
     initBookingForm();
     initLanguageSwitcher();
+    initPromoBanner();
 });
 
 /* ==========================================================================
@@ -246,7 +247,11 @@ const i18n = {
         // Modal
         "modal-h2": "ส่งข้อมูลการจองสำเร็จ!",
         "modal-p": "ทางร้าน Black Cafe & Restaurant ได้รับข้อมูลของคุณแล้ว เจ้าหน้าที่จะดำเนินการตรวจสอบและติดต่อกลับทางเบอร์โทรศัพท์หรืออีเมลที่แจ้งไว้โดยเร็วที่สุด",
-        "btn-close-modal": "ตกลง"
+        "btn-close-modal": "ตกลง",
+        
+        // Banner Modal
+        "banner-dont-show": "ไม่ต้องแสดงป๊อปอัปนี้อีกในวันนี้",
+        "floating-promo-text": "โปรโมชัน / เมนูใหม่"
     },
     en: {
         "meta-title": "Black Cafe & Restaurant | Premium Cafe & Restaurant in Bang Bon",
@@ -472,7 +477,11 @@ const i18n = {
         // Modal
         "modal-h2": "Booking Sent Successfully!",
         "modal-p": "Black Cafe & Restaurant has received your information. Our coordinator will contact you back via phone or email as soon as possible.",
-        "btn-close-modal": "Close"
+        "btn-close-modal": "Close",
+        
+        // Banner Modal
+        "banner-dont-show": "Don't show this popup again today",
+        "floating-promo-text": "Promotions / New Menu"
     }
 };
 let currentLang = localStorage.getItem("siteLang") || "th";
@@ -927,4 +936,114 @@ function initTabScrollArrows() {
     nextBtn.addEventListener("click", () => {
         scrollContainer.scrollBy({ left: 200, behavior: "smooth" });
     });
+}
+
+function initPromoBanner() {
+    const bannerModal = document.getElementById("promo-banner-modal");
+    const closeBannerBtn = document.getElementById("btn-close-banner");
+    const bannerOverlay = document.getElementById("banner-modal-overlay");
+    const chkDontShow = document.getElementById("chk-dont-show");
+    const btnPromoBadge = document.getElementById("btn-promo-badge");
+    const prevBtn = document.getElementById("btn-banner-prev");
+    const nextBtn = document.getElementById("btn-banner-next");
+    const dots = document.querySelectorAll(".banner-dot");
+    const slides = document.querySelectorAll(".banner-slide");
+
+    if (!bannerModal || !closeBannerBtn || !bannerOverlay || !chkDontShow || !btnPromoBadge) return;
+
+    let currentSlide = 0;
+    let autoPlayInterval = null;
+    const intervalTime = 4000;
+
+    function showSlide(index) {
+        if (index < 0) {
+            index = slides.length - 1;
+        } else if (index >= slides.length) {
+            index = 0;
+        }
+        
+        currentSlide = index;
+
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[currentSlide].classList.add("active");
+
+        dots.forEach(dot => dot.classList.remove("active"));
+        if (dots[currentSlide]) {
+            dots[currentSlide].classList.add("active");
+        }
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        autoPlayInterval = setInterval(nextSlide, intervalTime);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+
+    function openBannerModal() {
+        bannerModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+        showSlide(0);
+        startAutoPlay();
+    }
+
+    function closeBannerModal() {
+        bannerModal.classList.remove("active");
+        document.body.style.overflow = "";
+        stopAutoPlay();
+
+        if (chkDontShow.checked) {
+            const expiryTime = new Date().getTime() + 24 * 60 * 60 * 1000;
+            localStorage.setItem("promoBannerHiddenUntil", expiryTime);
+        }
+    }
+
+    closeBannerBtn.addEventListener("click", closeBannerModal);
+    bannerOverlay.addEventListener("click", closeBannerModal);
+    btnPromoBadge.addEventListener("click", openBannerModal);
+
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            startAutoPlay();
+        });
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            startAutoPlay();
+        });
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener("click", (e) => {
+            const index = parseInt(e.target.getAttribute("data-slide"));
+            showSlide(index);
+            startAutoPlay();
+        });
+    });
+
+    const carouselContainer = document.querySelector(".banner-carousel");
+    if (carouselContainer) {
+        carouselContainer.addEventListener("mouseenter", stopAutoPlay);
+        carouselContainer.addEventListener("mouseleave", startAutoPlay);
+    }
+
+    const hiddenUntil = localStorage.getItem("promoBannerHiddenUntil");
+    const currentTime = new Date().getTime();
+
+    if (!hiddenUntil || currentTime > parseInt(hiddenUntil)) {
+        setTimeout(openBannerModal, 1200);
+    }
 }

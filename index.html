@@ -994,6 +994,75 @@
         </div>
     </div>
 
+    <!-- Promotion/New Menu Announcement Banner Modal -->
+    <div class="banner-modal" id="promo-banner-modal">
+        <div class="banner-modal-overlay" id="banner-modal-overlay"></div>
+        <div class="banner-modal-wrapper">
+            <div class="banner-modal-content glass-card">
+                <button class="banner-modal-close" id="btn-close-banner" aria-label="ปิดโฆษณา">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                
+                <!-- Carousel Container -->
+                <div class="banner-carousel">
+                    <div class="banner-slides" id="banner-slides-container">
+                        <!-- Slide 1 -->
+                        <div class="banner-slide active">
+                            <img src="assets/banner_new_menu.webp" alt="เมนูใหม่">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="banner-slide">
+                            <img src="assets/banner_3_popular.webp" alt="3 เมนูยอดนิยม">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="banner-slide">
+                            <img src="assets/banner_pizza_homemade.webp" alt="พิซซ่าโฮมเมด">
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="banner-slide">
+                            <img src="assets/banner_best_value.webp" alt="เมนูสุดคุ้ม">
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="banner-slide">
+                            <img src="assets/banner_catering.webp" alt="อาหารออกบูธ">
+                        </div>
+                    </div>
+                    
+                    <!-- Carousel Controls -->
+                    <button class="banner-prev" id="btn-banner-prev" aria-label="รูปภาพก่อนหน้า">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button class="banner-next" id="btn-banner-next" aria-label="รูปภาพถัดไป">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Carousel Indicators -->
+                    <div class="banner-indicators" id="banner-indicators-container">
+                        <span class="banner-dot active" data-slide="0"></span>
+                        <span class="banner-dot" data-slide="1"></span>
+                        <span class="banner-dot" data-slide="2"></span>
+                        <span class="banner-dot" data-slide="3"></span>
+                        <span class="banner-dot" data-slide="4"></span>
+                    </div>
+                </div>
+
+                <!-- Footer options inside modal -->
+                <div class="banner-modal-footer">
+                    <label class="dont-show-again">
+                        <input type="checkbox" id="chk-dont-show">
+                        <span data-trn-key="banner-dont-show">ไม่ต้องแสดงป๊อปอัปนี้อีกในวันนี้</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Promotion Badge/Button -->
+    <button class="promo-floating-badge" id="btn-promo-badge" title="ดูโปรโมชันและเมนูแนะนำ">
+        <i class="fa-solid fa-gift"></i>
+        <span data-trn-key="floating-promo-text">โปรโมชัน / เมนูใหม่</span>
+    </button>
+
     <!-- Script File -->
     <script src="script.js"></script>
 </body>

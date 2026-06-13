@@ -29,6 +29,11 @@ async function capture() {
   console.log('Capturing PC Hero area...');
   await page.screenshot({ path: path.join(screenshotDir, 'pc-home.png') });
 
+  // Close the promo banner popup modal
+  console.log('Closing promo banner modal...');
+  await page.click('#btn-close-banner');
+  await new Promise(resolve => setTimeout(resolve, 600)); // Wait for transition
+
   // Scroll to About
   console.log('Scrolling to About section...');
   await page.evaluate(() => {
@@ -89,6 +94,11 @@ async function capture() {
   // Capture Hero Section Mobile
   console.log('Capturing Mobile Hero area...');
   await page.screenshot({ path: path.join(screenshotDir, 'mobile-home.png') });
+
+  // Close the promo banner modal on Mobile
+  console.log('Closing promo banner modal on Mobile...');
+  await page.click('#btn-close-banner');
+  await new Promise(resolve => setTimeout(resolve, 600)); // Wait for transition
 
   // Scroll to Menu
   console.log('Scrolling to Menu (Mobile)...');
