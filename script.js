@@ -257,7 +257,9 @@ const i18n = {
         "partner-tag": "SISTER BRAND",
         "partner-title": "BLACK FITNESS",
         "partner-desc": "ฟิตเนสระดับพรีเมียมในโครงการเดียวกัน ครบครันด้วยอุปกรณ์ออกกำลังกายนำเข้าที่ทันสมัย เทรนเนอร์มืออาชีพคอยดูแลอย่างใกล้ชิด และบรรยากาศที่ช่วยกระตุ้นพลังบวกในตัวคุณ เพื่อสุขภาพที่ดีอย่างสมบูรณ์แบบ",
-        "btn-partner-link": "<i class=\"fa-solid fa-dumbbell\"></i> เยี่ยมชมเว็บไซต์ Black Fitness"
+        "btn-partner-link": "<i class=\"fa-solid fa-dumbbell\"></i> เยี่ยมชมเว็บไซต์ Black Fitness",
+        "partner-branch-kancha": "สาขากาญจนาภิเษก",
+        "partner-branch-bangbon": "สาขาบางบอน 3"
     },
     en: {
         "meta-title": "Black Cafe & Restaurant | Premium Cafe & Restaurant in Bang Bon",
@@ -493,7 +495,9 @@ const i18n = {
         "partner-tag": "SISTER BRAND",
         "partner-title": "BLACK FITNESS",
         "partner-desc": "Premium fitness center in the same project premises. Fully equipped with imported state-of-the-art exercise equipment, professional trainers, and an atmosphere designed to boost your positive energy for ultimate health.",
-        "btn-partner-link": "<i class=\"fa-solid fa-dumbbell\"></i> Visit Black Fitness Website"
+        "btn-partner-link": "<i class=\"fa-solid fa-dumbbell\"></i> Visit Black Fitness Website",
+        "partner-branch-kancha": "Kanchanaphisek Branch",
+        "partner-branch-bangbon": "Bangbon 3 Branch"
     }
 };
 let currentLang = localStorage.getItem("siteLang") || "th";

@@ -1981,20 +1981,66 @@ ul {
 
 .partner-image-side {
     width: 50%;
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.branch-img-panel {
+    flex: 1;
+    height: 100%;
     background-size: cover;
     background-position: center;
     position: relative;
-    min-height: 300px;
+    transition: var(--transition-smooth);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
 }
 
-.partner-image-side::after {
+.branch-img-panel::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(10, 10, 11, 0) 60%, rgba(10, 10, 11, 0.4) 100%);
+    background: linear-gradient(to top, rgba(10, 10, 11, 0.8) 0%, rgba(10, 10, 11, 0.2) 60%, rgba(10, 10, 11, 0) 100%);
+    z-index: 1;
+    transition: var(--transition-smooth);
+}
+
+.branch-img-panel:hover {
+    flex: 1.55;
+}
+
+.branch-img-panel:hover::before {
+    background: linear-gradient(to top, rgba(10, 10, 11, 0.6) 0%, rgba(10, 10, 11, 0.1) 60%, rgba(10, 10, 11, 0) 100%);
+}
+
+.branch-img-label {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: rgba(10, 10, 11, 0.75);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: var(--transition-fast);
+    white-space: nowrap;
+}
+
+.branch-img-panel:hover .branch-img-label {
+    border-color: var(--gold-primary);
+    background: rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 10px var(--gold-glow);
 }
 
 .partner-info-side {
@@ -2044,9 +2090,6 @@ ul {
     .partner-image-side {
         width: 100%;
         height: 350px;
-    }
-    .partner-image-side::after {
-        background: linear-gradient(to bottom, rgba(10, 10, 11, 0) 60%, rgba(10, 10, 11, 0.4) 100%);
     }
     .partner-info-side {
         width: 100%;
