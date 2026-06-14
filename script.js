@@ -32,7 +32,7 @@ const i18n = {
         "nav-contact": "ติดต่อเรา",
         "btn-nav-book": "จองโต๊ะ / จัดบูธ",
         
-        "hero-badge": "EST. 2023",
+        "hero-badge": "ยินดีต้อนรับทุกคนที่เข้ามาแวะชมเว็บไซต์เรา",
         "hero-title": "BLACK CAFE & RESTAURANT",
         "hero-subtitle": "“ความสุขง่ายๆ อาจเริ่มต้นจากข้าวหนึ่งจาน และบรรยากาศที่ทำให้คุณรู้สึกสบายใจ”",
         "btn-hero-menu": "<i class=\"fa-solid fa-utensils\"></i> ดูเมนูของเรา",
@@ -262,7 +262,7 @@ const i18n = {
         "nav-contact": "Contact Us",
         "btn-nav-book": "Book Table / Event",
         
-        "hero-badge": "EST. 2023",
+        "hero-badge": "Welcome to everyone visiting our website",
         "hero-title": "BLACK CAFE & RESTAURANT",
         "hero-subtitle": "“Simple happiness may start from a plate of rice, and an atmosphere that makes you feel comfortable.”",
         "btn-hero-menu": "<i class=\"fa-solid fa-utensils\"></i> View Our Menu",
