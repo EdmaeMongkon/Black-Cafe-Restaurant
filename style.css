@@ -2109,5 +2109,11 @@ ul {
     .partner-info-side {
         width: 100%;
         padding: 40px 30px;
+        align-items: center;
+        text-align: center;
+    }
+    .partner-info-side .gold-divider-left {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
