@@ -52,7 +52,7 @@
     --backdrop-blur: blur(12px);
     
     /* Fonts */
-    --font-heading: 'Cinzel', serif;
+    --font-heading: 'Cinzel', 'Sarabun', 'Noto Sans Thai', serif;
     --font-body: 'Sarabun', 'Google Sans', 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
     
     /* Transitions */
